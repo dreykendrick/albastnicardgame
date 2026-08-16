@@ -1,86 +1,48 @@
-import { useMemo, useState } from "react";
 import { Reveal } from "./Reveal";
 import { WinnerCard } from "./WinnerCard";
-import { tournamentWinners, winnerYears } from "@/data/albastini";
+import { latestTournamentWinners } from "@/data/albastini";
 import { useI18n } from "@/lib/i18n";
-import { cn } from "@/lib/utils";
 
 export function WinnersSection() {
   const { t } = useI18n();
-  const [year, setYear] = useState<number | "all">("all");
 
-  const winners = useMemo(
-    () =>
-      (year === "all" ? tournamentWinners : tournamentWinners.filter((w) => w.year === year))
-        .slice()
-        .sort((a, b) => b.year - a.year || a.position - b.position),
-    [year],
-  );
+  const [first, second, third] = latestTournamentWinners;
 
   return (
-    <section id="winners" className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:py-28">
-      <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-        <Reveal>
+    <section id="winners" className="relative overflow-hidden py-24 lg:py-32">
+      <div aria-hidden className="alba-dots pointer-events-none absolute inset-0 opacity-40" />
+      <div className="relative mx-auto max-w-[1440px] px-5 sm:px-8">
+        <Reveal className="max-w-2xl">
           <span className="eyebrow text-muted-foreground">{t("win.eyebrow")}</span>
-          <h2 className="display-xl mt-4 text-4xl sm:text-5xl lg:text-6xl">
+          <h2 className="display-xl mt-4 text-4xl leading-[0.9] sm:text-5xl lg:text-6xl">
             {t("win.title1")}
             <br />
             <span className="text-alba-gold">{t("win.title2")}</span>
           </h2>
-          <p className="mt-5 max-w-md text-muted-foreground">{t("win.body")}</p>
+          <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">{t("win.body")}</p>
         </Reveal>
 
-        {winnerYears.length > 1 ? (
-          <div className="flex flex-wrap gap-2">
-            <FilterChip active={year === "all"} onClick={() => setYear("all")}>
-              {t("win.all")}
-            </FilterChip>
-            {winnerYears.map((y) => (
-              <FilterChip key={y} active={year === y} onClick={() => setYear(y)}>
-                {y}
-              </FilterChip>
-            ))}
-          </div>
-        ) : null}
+        {/* Podium: 1st emphasised, 2nd and 3rd alongside. */}
+        <div className="mx-auto mt-14 grid max-w-[1100px] gap-6 lg:grid-cols-3 lg:items-end lg:gap-8">
+          {first ? (
+            <Reveal className="lg:order-2">
+              <div className="lg:-mt-10">
+                <WinnerCard winner={first} featured />
+              </div>
+            </Reveal>
+          ) : null}
+          {second ? (
+            <Reveal delay={90} className="lg:order-1">
+              <WinnerCard winner={second} />
+            </Reveal>
+          ) : null}
+          {third ? (
+            <Reveal delay={150} className="lg:order-3">
+              <WinnerCard winner={third} />
+            </Reveal>
+          ) : null}
+        </div>
       </div>
-
-      {/* Mobile: swipeable rail · Desktop: grid */}
-      <ul className="mt-12 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4">
-        {winners.map((w, i) => (
-          <Reveal
-            as="li"
-            key={w.id}
-            delay={i * 70}
-            className="w-[74vw] max-w-[300px] shrink-0 snap-start sm:w-auto sm:max-w-none"
-          >
-            <WinnerCard winner={w} />
-          </Reveal>
-        ))}
-      </ul>
     </section>
-  );
-}
-
-function FilterChip({
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className={cn(
-        "eyebrow rounded-full border px-4 py-2 text-[0.6rem] transition-colors",
-        active
-          ? "border-foreground bg-foreground text-background"
-          : "border-border text-muted-foreground hover:text-foreground",
-      )}
-    >
-      {children}
-    </button>
   );
 }

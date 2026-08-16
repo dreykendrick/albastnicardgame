@@ -18,19 +18,21 @@ export function FinalCTA() {
       />
       <div className="relative mx-auto max-w-[1440px] px-5 sm:px-8">
         <Reveal className="max-w-2xl">
-          <h2 className="display-xl text-5xl sm:text-6xl lg:text-8xl">{t("final.title")}</h2>
-          <p className="wordmark mt-5 text-2xl text-primary sm:text-3xl">{t("final.sub")}</p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <AlbaButton asChildHref="#app" size="lg">
-              {t("final.cta1")}
+          <h2 className="display-xl text-5xl leading-[0.88] sm:text-6xl lg:text-8xl">
+            {t("final.title")}
+          </h2>
+          <p className="wordmark mt-6 text-2xl text-primary sm:text-3xl">{t("final.sub")}</p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <AlbaButton asChildHref="#app" size="lg" className="w-full sm:w-auto">
+              {t("cta.app")}
             </AlbaButton>
             <AlbaButton
-              asChildHref="#app"
+              asChildHref="#cards"
               variant="outline"
               size="lg"
-              className="border-alba-paper/30 text-alba-paper hover:border-alba-paper/70 hover:bg-alba-paper/10"
+              className="w-full border-alba-paper/30 text-alba-paper hover:border-alba-paper/70 hover:bg-alba-paper/10 sm:w-auto"
             >
-              {t("final.cta2")}
+              {t("cta.cards")}
             </AlbaButton>
           </div>
         </Reveal>

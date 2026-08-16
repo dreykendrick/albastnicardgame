@@ -110,6 +110,17 @@ export const tournamentWinners: Winner[] = [
   },
 ];
 
-export const winnerYears = Array.from(new Set(tournamentWinners.map((w) => w.year))).sort(
-  (a, b) => b - a,
-);
+/**
+ * The three podium finishers of the most recent tournament — the only winners
+ * the site shows. Adding a newer tournament's winners above automatically
+ * promotes them here.
+ */
+export const latestTournamentWinners: Winner[] = (() => {
+  const latestYear = Math.max(...tournamentWinners.map((w) => w.year));
+  const latest = tournamentWinners.filter((w) => w.year === latestYear);
+  const latestTournamentName = latest[0]?.tournament;
+  return latest
+    .filter((w) => w.tournament === latestTournamentName && w.position <= 3)
+    .sort((a, b) => a.position - b.position);
+})();
+

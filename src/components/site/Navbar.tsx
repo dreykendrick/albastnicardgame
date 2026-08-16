@@ -80,8 +80,9 @@ export function Navbar() {
           </button>
 
           <AlbaButton asChildHref="#app" size="sm" className="hidden sm:inline-flex">
-            {t("nav.play")}
+            {t("cta.app")}
           </AlbaButton>
+
 
           <button
             onClick={() => setOpen((o) => !o)}
@@ -124,8 +125,9 @@ export function Navbar() {
               ))}
             </div>
             <AlbaButton asChildHref="#app" size="sm" onClick={() => setOpen(false)}>
-              {t("nav.play")}
+              {t("cta.app")}
             </AlbaButton>
+
           </div>
         </div>
       ) : null}
