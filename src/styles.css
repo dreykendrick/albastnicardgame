@@ -187,6 +187,16 @@
   opacity: 0.12;
 }
 
+/* Subtle card-inspired dot grid for section backgrounds. */
+@utility alba-dots {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: color-mix(in oklab, var(--foreground) 18%, transparent);
+  mask-image: radial-gradient(ellipse at center, black, transparent 75%);
+}
+
+
+
 @utility card-face {
   background: var(--alba-paper);
   border-radius: 0.9rem;
