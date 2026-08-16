@@ -2,6 +2,7 @@ import cardBlack from "@/assets/card-black.png.asset.json";
 import cardBlue from "@/assets/card-blue.jpeg.asset.json";
 import cardRed from "@/assets/card-red.jpeg.asset.json";
 import safariBox from "@/assets/safari-box.jpeg.asset.json";
+import { AlbaButton } from "./AlbaButton";
 import { CardNotifyForm } from "./CardNotifyForm";
 import { Reveal } from "./Reveal";
 import { useI18n, type TKey } from "@/lib/i18n";
@@ -18,26 +19,27 @@ export function PhysicalCardsSection() {
   const { t } = useI18n();
 
   return (
-    <section id="cards" className="bg-secondary/60 py-20 lg:py-28">
-      <div className="mx-auto grid max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-16">
+    <section id="cards" className="relative overflow-hidden bg-secondary/60 py-24 lg:py-32">
+      <div aria-hidden className="kanga-rule absolute inset-x-0 top-0 h-1.5" />
+      <div className="mx-auto grid max-w-[1440px] gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-20">
         <Reveal>
           <div className="relative">
             <img
               src={safariBox.url}
-              alt="Albastini Safari Edition box"
+              alt="Albastini Safari Edition card box"
               loading="lazy"
               width={1392}
               height={1920}
-              className="w-full max-w-[420px] rounded-2xl object-cover shadow-lift"
+              className="w-full max-w-[520px] rounded-3xl object-cover shadow-lift"
             />
-            <div className="mt-[-3rem] flex justify-end gap-2 pr-2 sm:mt-[-4rem] sm:pr-8">
+            <div className="mt-[-3.5rem] flex justify-end gap-3 pr-2 sm:mt-[-5rem] sm:pr-8">
               {cards.map((c) => (
                 <img
                   key={c.alt}
                   src={c.src}
                   alt={c.alt}
                   loading="lazy"
-                  className={`w-20 rounded-lg bg-white shadow-card transition-transform duration-300 hover:-translate-y-3 sm:w-28 ${c.rotate}`}
+                  className={`w-24 rounded-xl bg-white shadow-card transition-transform duration-300 sm:w-32 sm:hover:-translate-y-4 sm:hover:rotate-0 sm:hover:shadow-lift ${c.rotate}`}
                 />
               ))}
             </div>
@@ -46,10 +48,12 @@ export function PhysicalCardsSection() {
 
         <Reveal delay={100}>
           <span className="eyebrow text-muted-foreground">{t("phys.eyebrow")}</span>
-          <h2 className="display-xl mt-4 text-4xl sm:text-5xl">{t("phys.title")}</h2>
-          <p className="mt-5 max-w-md text-muted-foreground">{t("phys.body")}</p>
+          <h2 className="display-xl mt-4 text-4xl leading-[0.9] sm:text-5xl lg:text-6xl">
+            {t("phys.title")}
+          </h2>
+          <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">{t("phys.body")}</p>
 
-          <ul className="mt-7 flex flex-wrap gap-2">
+          <ul className="mt-8 flex flex-wrap gap-2">
             {specs.map((s) => (
               <li
                 key={s}
@@ -60,9 +64,19 @@ export function PhysicalCardsSection() {
             ))}
           </ul>
 
-          <div className="mt-8">
-            <p className="eyebrow mb-4 text-[0.6rem] text-foreground">{t("phys.cta")}</p>
-            <CardNotifyForm />
+          <div className="mt-10 rounded-3xl border border-border bg-card p-6 shadow-card sm:p-8">
+            <div className="flex flex-wrap items-center gap-3">
+              <AlbaButton asChildHref="#notify-email" size="lg" className="w-full sm:w-auto">
+                {t("cta.cards")}
+              </AlbaButton>
+              <span className="eyebrow rounded-full bg-alba-gold/15 px-3 py-1.5 text-[0.55rem] text-alba-gold">
+                {t("phys.soon")}
+              </span>
+            </div>
+            <p className="eyebrow mt-6 text-[0.6rem] text-foreground">{t("phys.notify")}</p>
+            <div className="mt-4">
+              <CardNotifyForm />
+            </div>
           </div>
         </Reveal>
       </div>
