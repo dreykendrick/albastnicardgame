@@ -1,24 +1,56 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AppSection } from "@/components/site/AppSection";
+import { FinalCTA } from "@/components/site/FinalCTA";
+import { Footer } from "@/components/site/Footer";
+import { GameSection } from "@/components/site/GameSection";
+import { Hero } from "@/components/site/Hero";
+import { Intro } from "@/components/site/Intro";
+import { Navbar } from "@/components/site/Navbar";
+import { PhysicalCardsSection } from "@/components/site/PhysicalCardsSection";
+import { StatsSection } from "@/components/site/StatsSection";
+import { TournamentSection } from "@/components/site/TournamentSection";
+import { WinnersSection } from "@/components/site/WinnersSection";
+import { LanguageProvider } from "@/lib/i18n";
+import { ThemeProvider } from "@/lib/theme";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Albastini — The Tanzanian Card Game";
+const description =
+  "Play. Compete. Win. Albastini is a fast tactical card game from Tanzania — on the app, on the table, and in live tournaments.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <ThemeProvider>
+      <LanguageProvider>
+        <div className="min-h-screen bg-background">
+          <Navbar />
+          <main>
+            <Hero />
+            <Intro />
+            <GameSection />
+            <StatsSection />
+            <TournamentSection />
+            <WinnersSection />
+            <PhysicalCardsSection />
+            <AppSection />
+            <FinalCTA />
+          </main>
+          <Footer />
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
