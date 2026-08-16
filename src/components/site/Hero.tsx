@@ -43,7 +43,7 @@ export function Hero() {
       />
 
       <div className="relative mx-auto grid max-w-[1440px] items-center gap-12 px-5 pb-16 sm:px-8 lg:grid-cols-[0.95fr_1fr] lg:gap-10 lg:pb-28">
-        <div className="max-w-xl">
+        <div className="max-w-xl lg:max-w-2xl">
           <span className="eyebrow inline-flex items-center gap-2 text-muted-foreground">
             <span className="kanga-rule inline-block h-1 w-8 rounded-full" />
             {t("hero.eyebrow")}
