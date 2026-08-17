@@ -1,7 +1,7 @@
-import cardBlack from "@/assets/card-black.png.asset.json";
-import cardBlue from "@/assets/card-blue.jpeg.asset.json";
+import cardBlack from "@/assets/card-black-official.png.asset.json";
+import cardBlue from "@/assets/card-blue-official.png.asset.json";
 import cardFan from "@/assets/card-fan.png.asset.json";
-import cardRed from "@/assets/card-red.jpeg.asset.json";
+import cardRed from "@/assets/card-red-official.png.asset.json";
 import { AlbaButton } from "./AlbaButton";
 import { useI18n } from "@/lib/i18n";
 
