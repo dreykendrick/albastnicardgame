@@ -1,6 +1,6 @@
-import cardBlack from "@/assets/card-black.png.asset.json";
-import cardBlue from "@/assets/card-blue.jpeg.asset.json";
-import cardRed from "@/assets/card-red.jpeg.asset.json";
+import cardBlack from "@/assets/card-black-official.png.asset.json";
+import cardBlue from "@/assets/card-blue-official.png.asset.json";
+import cardRed from "@/assets/card-red-official.png.asset.json";
 import safariBox from "@/assets/safari-box.jpeg.asset.json";
 import { AlbaButton } from "./AlbaButton";
 import { CardNotifyForm } from "./CardNotifyForm";
