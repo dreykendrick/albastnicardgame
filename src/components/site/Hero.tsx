@@ -98,9 +98,6 @@ export function Hero() {
             />
           </div>
 
-          <span className="eyebrow mx-auto mt-6 block w-fit rounded-full border border-border bg-card/80 px-3 py-1 text-[0.6rem] text-muted-foreground backdrop-blur">
-            {t("hero.badge")}
-          </span>
         </div>
       </div>
 
