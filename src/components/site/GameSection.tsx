@@ -1,4 +1,4 @@
-import safariBox from "@/assets/safari-box.jpeg.asset.json";
+import safariBox from "@/assets/box-expansion.png.asset.json";
 import { AlbaButton } from "./AlbaButton";
 import { PhoneMockup } from "./PhoneMockup";
 import { Reveal } from "./Reveal";
@@ -56,11 +56,11 @@ export function GameSection() {
               <div className="flex justify-center py-6">
                 <img
                   src={safariBox.url}
-                  alt="Albastini Safari Edition card box"
+                  alt="Albastini Safari Edition Expansion Pack card box"
                   loading="lazy"
-                  width={1392}
-                  height={1920}
-                  className="h-[300px] w-auto rounded-xl object-cover shadow-lift transition-transform duration-500 group-hover:rotate-2 sm:h-[340px]"
+                  width={1355}
+                  height={1105}
+                  className="h-[220px] w-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:rotate-2 sm:h-[260px]"
                 />
               </div>
               <h3 className="display-xl mt-4 text-2xl sm:text-3xl">{t("game.phys.t")}</h3>
