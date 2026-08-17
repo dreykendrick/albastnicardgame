@@ -105,7 +105,7 @@ const dict = {
     "app.soon": "Coming soon to Android and iOS",
 
     "final.title": "Ready to play?",
-    "final.sub": "Tucheze Albastini.",
+    "final.sub": "Ingia Uwanjani Tucheze Albastini.",
 
     "footer.tagline": "The Tanzanian card game.",
     "footer.rights": "All rights reserved.",
@@ -203,7 +203,7 @@ const dict = {
     "app.soon": "Inakuja hivi karibuni kwa Android na iOS",
 
     "final.title": "Uko tayari kucheza?",
-    "final.sub": "Tucheze Albastini.",
+    "final.sub": "Ingia Uwanjani Tucheze Albastini.",
 
 
     "footer.tagline": "Mchezo wa karata wa Tanzania.",
