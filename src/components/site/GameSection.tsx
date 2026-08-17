@@ -1,4 +1,4 @@
-import safariBox from "@/assets/safari-box.jpeg.asset.json";
+import safariBox from "@/assets/box-expansion.png.asset.json";
 import { AlbaButton } from "./AlbaButton";
 import { PhoneMockup } from "./PhoneMockup";
 import { Reveal } from "./Reveal";
