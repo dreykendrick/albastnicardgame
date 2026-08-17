@@ -1,7 +1,7 @@
 import cardBlack from "@/assets/card-black-official.png.asset.json";
 import cardBlue from "@/assets/card-blue-official.png.asset.json";
 import cardRed from "@/assets/card-red-official.png.asset.json";
-import safariBox from "@/assets/safari-box.jpeg.asset.json";
+import safariBox from "@/assets/box-safari-retail.png.asset.json";
 import { AlbaButton } from "./AlbaButton";
 import { CardNotifyForm } from "./CardNotifyForm";
 import { Reveal } from "./Reveal";
@@ -28,9 +28,9 @@ export function PhysicalCardsSection() {
               src={safariBox.url}
               alt="Albastini Safari Edition card box"
               loading="lazy"
-              width={1392}
-              height={1920}
-              className="w-full max-w-[520px] rounded-3xl object-cover shadow-lift"
+              width={278}
+              height={480}
+              className="w-full max-w-[520px] rounded-3xl object-contain drop-shadow-2xl"
             />
             <div className="mt-[-3.5rem] flex justify-end gap-3 pr-2 sm:mt-[-5rem] sm:pr-8">
               {cards.map((c) => (
