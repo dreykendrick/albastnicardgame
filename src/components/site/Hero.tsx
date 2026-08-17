@@ -1,4 +1,4 @@
-import cardBlack from "@/assets/card-black-official.png.asset.json";
+import cardBlack from "@/assets/card-black-official-v2.png.asset.json";
 import cardBlue from "@/assets/card-blue-official.png.asset.json";
 import cardFan from "@/assets/card-fan.png.asset.json";
 import cardRed from "@/assets/card-red-official.png.asset.json";
