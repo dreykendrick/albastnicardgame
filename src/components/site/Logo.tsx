@@ -13,7 +13,7 @@ export function Logo({ className, showTag = false }: { className?: string; showT
       <span className="flex flex-col leading-none">
         <span className="wordmark text-xl sm:text-2xl">Albastini</span>
         {showTag ? (
-          <span className="eyebrow mt-1 text-[0.55rem] text-muted-foreground">Safari Edition</span>
+          <span className="eyebrow mt-1 text-[0.55rem] text-muted-foreground uppercase">INGIA UWANJANI TIUCHEZE</span>
         ) : null}
       </span>
     </span>
