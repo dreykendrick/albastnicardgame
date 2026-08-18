@@ -37,10 +37,10 @@ export type Tournament = {
 };
 
 export const nextTournament: Tournament = {
-  name: "Albastini Safari Cup",
-  startsAt: "2026-09-05T15:00:00+03:00",
+  name: "Albastini App Tournament",
+  startsAt: "2026-08-27T15:00:00+03:00",
   venue: "Dar es Salaam",
-  prizePool: "TSh 5,000,000",
+  prizePool: "TSh 250,000",
   format: "64 players · knockout",
 };
 
