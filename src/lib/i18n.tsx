@@ -102,7 +102,13 @@ const dict = {
     "app.title1": "The game.",
     "app.title2": "In your pocket.",
     "app.body": "Quick matches, ranked tables and tournament qualifiers — anywhere in the country.",
-    "app.soon": "Coming soon to Android and iOS",
+    "app.soon": "Available now on Android and iOS",
+
+    "modal.title": "Choose your device",
+    "modal.body": "Pick your platform to download Albastini from the official store.",
+    "modal.ios": "Download for iOS",
+    "modal.android": "Download for Android",
+    "modal.close": "Close",
 
     "final.title": "Ready to play?",
     "final.sub": "Ingia Uwanjani Tucheze Albastini.",
@@ -200,7 +206,13 @@ const dict = {
     "app.title1": "Mchezo.",
     "app.title2": "Mfukoni mwako.",
     "app.body": "Michezo ya haraka, meza za daraja na kufuzu mashindano — kila kona ya nchi.",
-    "app.soon": "Inakuja hivi karibuni kwa Android na iOS",
+    "app.soon": "Inapatikana sasa kwa Android na iOS",
+
+    "modal.title": "Chagua kifaa chako",
+    "modal.body": "Chagua jukwaa lako ili kupakua Albastini kutoka kwenye duka rasmi.",
+    "modal.ios": "Pakua kwa iOS",
+    "modal.android": "Pakua kwa Android",
+    "modal.close": "Funga",
 
     "final.title": "Uko tayari kucheza?",
     "final.sub": "Ingia Uwanjani Tucheze Albastini.",
