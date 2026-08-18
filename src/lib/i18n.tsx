@@ -25,7 +25,7 @@ const dict = {
     "cta.app": "Download the app",
     "cta.cards": "Get the physical cards",
 
-    "hero.eyebrow": "Albastini · Tanzania",
+    "hero.eyebrow": "ALBASTINI CARD GAME",
     "hero.title": "The game is on.",
     "hero.sub": "Play. Compete. Win. The Albastini card game — on your phone and on your table.",
     "hero.badge": "Safari Edition",
@@ -123,7 +123,7 @@ const dict = {
     "cta.app": "Pakua app",
     "cta.cards": "Pata karata halisi",
 
-    "hero.eyebrow": "Albastini · Tanzania",
+    "hero.eyebrow": "ALBASTINI CARD GAME",
     "hero.title": "Mchezo umeanza.",
     "hero.sub": "Cheza. Shindana. Shinda. Mchezo wa karata Albastini — simuni na mezani.",
     "hero.badge": "Safari Edition",
