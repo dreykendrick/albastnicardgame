@@ -37,7 +37,7 @@ export type Tournament = {
 };
 
 export const nextTournament: Tournament = {
-  name: "Albastini App Tournament",
+  name: "Albastini Tournament #25",
   startsAt: "2026-08-27T15:00:00+03:00",
   venue: "Dar es Salaam",
   prizePool: "TSh 250,000",
