@@ -1,4 +1,4 @@
-import { CalendarDays, MapPin, Trophy } from "lucide-react";
+import { CalendarDays, Trophy } from "lucide-react";
 import { AlbaButton } from "./AlbaButton";
 import { Reveal } from "./Reveal";
 import { TournamentCountdown } from "./TournamentCountdown";
@@ -32,22 +32,10 @@ export function TournamentSection() {
               <CalendarDays className="size-4 shrink-0 text-primary" />
               {dateLabel}
             </li>
-            {nextTournament.venue ? (
-              <li className="flex items-center gap-2">
-                <MapPin className="size-4 shrink-0 text-primary" />
-                {nextTournament.venue}
-              </li>
-            ) : null}
             {nextTournament.prizePool ? (
               <li className="flex items-center gap-2">
                 <Trophy className="size-4 shrink-0 text-primary" />
                 {t("tour.prize")}: {nextTournament.prizePool}
-              </li>
-            ) : null}
-            {nextTournament.format ? (
-              <li className="flex items-center gap-2">
-                <span className="size-4 shrink-0 text-center text-primary">·</span>
-                {nextTournament.format}
               </li>
             ) : null}
           </ul>
