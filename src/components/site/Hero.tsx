@@ -3,6 +3,7 @@ import cardBlue from "@/assets/card-blue-official.png.asset.json";
 import cardFan from "@/assets/card-fan.png.asset.json";
 import cardRed from "@/assets/card-red-official.png.asset.json";
 import { AlbaButton } from "./AlbaButton";
+import { DownloadButton } from "./DownloadButton";
 import { useI18n } from "@/lib/i18n";
 
 const heroCards = [
@@ -58,9 +59,9 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <AlbaButton asChildHref="#app" size="lg" className="w-full sm:w-auto">
+            <DownloadButton size="lg" className="w-full sm:w-auto">
               {t("cta.app")}
-            </AlbaButton>
+            </DownloadButton>
             <AlbaButton
               asChildHref="#cards"
               variant="outline"

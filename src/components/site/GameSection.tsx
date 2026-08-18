@@ -1,5 +1,6 @@
 import safariBox from "@/assets/box-expansion.png.asset.json";
 import { AlbaButton } from "./AlbaButton";
+import { DownloadButton } from "./DownloadButton";
 import { PhoneMockup } from "./PhoneMockup";
 import { Reveal } from "./Reveal";
 import { useI18n } from "@/lib/i18n";
@@ -36,9 +37,9 @@ export function GameSection() {
                 {t("game.app.b")}
               </p>
               <div className="mt-8">
-                <AlbaButton asChildHref="#app" className="w-full sm:w-auto">
+                <DownloadButton className="w-full sm:w-auto">
                   {t("cta.app")}
-                </AlbaButton>
+                </DownloadButton>
               </div>
             </article>
           </Reveal>
