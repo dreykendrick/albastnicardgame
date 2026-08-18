@@ -1,4 +1,4 @@
-import { CalendarDays, MapPin, Trophy } from "lucide-react";
+import { CalendarDays, Trophy } from "lucide-react";
 import { AlbaButton } from "./AlbaButton";
 import { Reveal } from "./Reveal";
 import { TournamentCountdown } from "./TournamentCountdown";
