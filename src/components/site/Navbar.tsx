@@ -1,6 +1,7 @@
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AlbaButton } from "./AlbaButton";
+import { DownloadButton } from "./DownloadButton";
 import { Logo } from "./Logo";
 import { useI18n, type TKey } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
@@ -79,9 +80,9 @@ export function Navbar() {
             {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </button>
 
-          <AlbaButton asChildHref="#app" size="sm" className="hidden sm:inline-flex">
+          <DownloadButton size="sm" className="hidden sm:inline-flex">
             {t("cta.app")}
-          </AlbaButton>
+          </DownloadButton>
 
 
           <button
@@ -124,9 +125,9 @@ export function Navbar() {
                 </button>
               ))}
             </div>
-            <AlbaButton asChildHref="#app" size="sm" onClick={() => setOpen(false)}>
+            <DownloadButton size="sm" onClick={() => setOpen(false)}>
               {t("cta.app")}
-            </AlbaButton>
+            </DownloadButton>
 
           </div>
         </div>

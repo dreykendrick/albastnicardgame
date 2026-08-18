@@ -1,5 +1,6 @@
 import cardFan from "@/assets/card-fan.png.asset.json";
 import { AlbaButton } from "./AlbaButton";
+import { DownloadButton } from "./DownloadButton";
 import { Reveal } from "./Reveal";
 import { useI18n } from "@/lib/i18n";
 
@@ -23,9 +24,9 @@ export function FinalCTA() {
           </h2>
           <p className="wordmark mt-6 text-2xl text-primary sm:text-3xl">{t("final.sub")}</p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <AlbaButton asChildHref="#app" size="lg" className="w-full sm:w-auto">
+            <DownloadButton size="lg" className="w-full sm:w-auto">
               {t("cta.app")}
-            </AlbaButton>
+            </DownloadButton>
             <AlbaButton
               asChildHref="#cards"
               variant="outline"

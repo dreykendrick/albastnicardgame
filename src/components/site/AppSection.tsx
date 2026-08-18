@@ -1,5 +1,5 @@
 import players from "@/assets/players.jpg";
-import { AlbaButton } from "./AlbaButton";
+import { DownloadButton } from "./DownloadButton";
 import { PhoneMockup } from "./PhoneMockup";
 import { Reveal } from "./Reveal";
 import { useI18n } from "@/lib/i18n";
@@ -21,10 +21,9 @@ export function AppSection() {
           <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">{t("app.body")}</p>
 
           <div className="mt-9">
-            {/* Single CTA — real store URLs get wired in here once the app is listed. */}
-            <AlbaButton asChildHref="#app" size="lg" className="w-full sm:w-auto">
+            <DownloadButton size="lg" className="w-full sm:w-auto">
               {t("cta.app")}
-            </AlbaButton>
+            </DownloadButton>
             <p className="eyebrow mt-4 text-[0.6rem] text-muted-foreground">{t("app.soon")}</p>
           </div>
 
