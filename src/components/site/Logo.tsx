@@ -12,7 +12,7 @@ export function Logo({ className, showTag = false }: { className?: string; showT
         alt="Albastini logo"
         width={36}
         height={36}
-        className="size-9 shrink-0 rounded-full object-cover ring-2 ring-primary transition-transform duration-300 group-hover:rotate-12"
+        className="size-9 shrink-0 object-cover transition-transform duration-300 group-hover:rotate-12"
       />
       <span className="flex flex-col leading-none">
         <span className="wordmark text-xl sm:text-2xl">Albastini</span>
