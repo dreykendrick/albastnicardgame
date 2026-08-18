@@ -25,9 +25,9 @@ export const albaButton = cva(
   },
 );
 
-type Props = ComponentProps<"button"> & VariantProps<typeof albaButton> & { asChildHref?: string };
+export type AlbaButtonProps = ComponentProps<"button"> & VariantProps<typeof albaButton> & { asChildHref?: string };
 
-export function AlbaButton({ className, variant, size, asChildHref, ...props }: Props) {
+export function AlbaButton({ className, variant, size, asChildHref, ...props }: AlbaButtonProps) {
   if (asChildHref) {
     return (
       <a href={asChildHref} className={cn(albaButton({ variant, size }), className)}>
