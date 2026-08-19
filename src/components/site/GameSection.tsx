@@ -1,4 +1,4 @@
-import safariBox from "@/assets/box-expansion.png.asset.json";
+import safariBox from "@/assets/box-expansion.png";
 import { AlbaButton } from "./AlbaButton";
 import { DownloadButton } from "./DownloadButton";
 import { PhoneMockup } from "./PhoneMockup";
@@ -56,7 +56,7 @@ export function GameSection() {
               </span>
               <div className="flex justify-center py-6">
                 <img
-                  src={safariBox.url}
+                  src={safariBox}
                   alt="Albastini Safari Edition Expansion Pack card box"
                   loading="lazy"
                   width={1355}

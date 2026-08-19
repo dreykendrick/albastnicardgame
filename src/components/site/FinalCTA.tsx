@@ -1,4 +1,4 @@
-import cardFan from "@/assets/card-fan.png.asset.json";
+import cardFan from "@/assets/card-fan.png";
 import { AlbaButton } from "./AlbaButton";
 import { DownloadButton } from "./DownloadButton";
 import { Reveal } from "./Reveal";
@@ -12,7 +12,7 @@ export function FinalCTA() {
       <div aria-hidden className="kanga-rule absolute inset-x-0 top-0 h-1.5" />
       <img
         aria-hidden
-        src={cardFan.url}
+        src={cardFan}
         alt=""
         loading="lazy"
         className="pointer-events-none absolute -right-24 -top-16 w-[420px] opacity-15 sm:w-[560px]"

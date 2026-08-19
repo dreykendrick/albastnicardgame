@@ -1,4 +1,4 @@
-import appHome from "@/assets/app-home.jpg.asset.json";
+import appHome from "@/assets/app-home.jpg";
 import { cn } from "@/lib/utils";
 
 /** Lightweight CSS phone frame showing a real screenshot of the Albastini app. */
@@ -13,7 +13,7 @@ export function PhoneMockup({ className }: { className?: string }) {
       <div className="absolute left-1/2 top-2.5 z-10 h-1.5 w-14 -translate-x-1/2 rounded-full bg-white/25" />
       <div className="h-full w-full overflow-hidden rounded-[1.6rem]">
         <img
-          src={appHome.url}
+          src={appHome}
           alt="Albastini app home screen with practice mode, head to head and tournament options"
           loading="lazy"
           width={886}

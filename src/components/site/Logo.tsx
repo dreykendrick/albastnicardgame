@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import logoAsset from "@/assets/albastini-logo.png.asset.json";
+import logoAsset from "@/assets/albastini-logo.png";
 
 /**
  * Albastini wordmark — official logo mark with the Albastini wordmark.
@@ -8,7 +8,7 @@ export function Logo({ className, showTag = false }: { className?: string; showT
   return (
     <span className={cn("group inline-flex items-center gap-2.5", className)}>
       <img
-        src={logoAsset.url}
+        src={logoAsset}
         alt="Albastini logo"
         width={36}
         height={36}

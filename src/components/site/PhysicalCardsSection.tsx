@@ -1,16 +1,16 @@
-import cardBlack from "@/assets/card-black-official.png.asset.json";
-import cardBlue from "@/assets/card-blue-official.png.asset.json";
-import cardRed from "@/assets/card-red-official.png.asset.json";
-import safariBox from "@/assets/box-safari-retail.png.asset.json";
+import cardBlack from "@/assets/card-black-official.png";
+import cardBlue from "@/assets/card-blue-official.png";
+import cardRed from "@/assets/card-red-official.png";
+import safariBox from "@/assets/box-safari-retail.png";
 import { AlbaButton } from "./AlbaButton";
 import { CardNotifyForm } from "./CardNotifyForm";
 import { Reveal } from "./Reveal";
 import { useI18n, type TKey } from "@/lib/i18n";
 
 const cards = [
-  { src: cardRed.url, alt: "Albastini red ace card", rotate: "-rotate-6" },
-  { src: cardBlack.url, alt: "Albastini black ace card", rotate: "rotate-2" },
-  { src: cardBlue.url, alt: "Albastini blue ace card", rotate: "rotate-8" },
+  { src: cardRed, alt: "Albastini red ace card", rotate: "-rotate-6" },
+  { src: cardBlack, alt: "Albastini black ace card", rotate: "rotate-2" },
+  { src: cardBlue, alt: "Albastini blue ace card", rotate: "rotate-8" },
 ];
 
 const specs: TKey[] = ["phys.spec1", "phys.spec2", "phys.spec3"];
@@ -25,7 +25,7 @@ export function PhysicalCardsSection() {
         <Reveal>
           <div className="relative">
             <img
-              src={safariBox.url}
+              src={safariBox}
               alt="Albastini Safari Edition card box"
               loading="lazy"
               width={278}

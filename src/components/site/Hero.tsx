@@ -1,24 +1,24 @@
-import cardBlack from "@/assets/card-black-official-v2.png.asset.json";
-import cardBlue from "@/assets/card-blue-official.png.asset.json";
-import cardFan from "@/assets/card-fan.png.asset.json";
-import cardRed from "@/assets/card-red-official.png.asset.json";
+import cardBlack from "@/assets/card-black-official-v2.png";
+import cardBlue from "@/assets/card-blue-official.png";
+import cardFan from "@/assets/card-fan.png";
+import cardRed from "@/assets/card-red-official.png";
 import { AlbaButton } from "./AlbaButton";
 import { DownloadButton } from "./DownloadButton";
 import { useI18n } from "@/lib/i18n";
 
 const heroCards = [
   {
-    src: cardRed.url,
+    src: cardRed,
     alt: "Albastini red ace playing card",
     className: "-rotate-12 -mr-10 z-10 translate-y-6",
   },
   {
-    src: cardBlack.url,
+    src: cardBlack,
     alt: "Albastini black ace playing card",
     className: "-rotate-2 z-20",
   },
   {
-    src: cardBlue.url,
+    src: cardBlue,
     alt: "Albastini blue ace playing card",
     className: "rotate-10 -ml-10 z-10 translate-y-6",
   },
@@ -91,7 +91,7 @@ export function Hero() {
           {/* Mobile: the fan artwork reads better at small widths. */}
           <div className="float-slow relative mx-auto max-w-[440px] sm:hidden">
             <img
-              src={cardFan.url}
+              src={cardFan}
               alt="A fan of Albastini playing cards in green, red, black and blue with the yellow points chip"
               width={1920}
               height={1920}
