@@ -2,11 +2,19 @@ import { CalendarDays, Trophy } from "lucide-react";
 import { AlbaButton } from "./AlbaButton";
 import { Reveal } from "./Reveal";
 import { TournamentCountdown } from "./TournamentCountdown";
-import { nextTournament } from "@/data/albastini";
+import { getTournament } from "@/server/api";
+import { useQuery } from "@tanstack/react-query";
 import { useI18n } from "@/lib/i18n";
 
 export function TournamentSection() {
   const { t, lang } = useI18n();
+  const { data: nextTournament } = useQuery({
+    queryKey: ["tournament"],
+    queryFn: () => getTournament(),
+  });
+
+  if (!nextTournament) return null;
+
   const date = new Date(nextTournament.startsAt);
   const dateLabel = date.toLocaleDateString(lang === "sw" ? "sw-TZ" : "en-GB", {
     day: "numeric",

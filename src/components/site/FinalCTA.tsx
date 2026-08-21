@@ -1,4 +1,4 @@
-import cardFan from "@/assets/card-fan.png";
+import cardFan from "@/assets/card-fan.webp";
 import { AlbaButton } from "./AlbaButton";
 import { DownloadButton } from "./DownloadButton";
 import { Reveal } from "./Reveal";

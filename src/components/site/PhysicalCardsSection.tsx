@@ -1,7 +1,7 @@
-import cardBlack from "@/assets/card-black-official.png";
-import cardBlue from "@/assets/card-blue-official.png";
-import cardRed from "@/assets/card-red-official.png";
-import safariBox from "@/assets/box-safari-retail.png";
+import cardBlack from "@/assets/card-black-official.webp";
+import cardBlue from "@/assets/card-blue-official.webp";
+import cardRed from "@/assets/card-red-official.webp";
+import safariBox from "@/assets/box-safari-retail.webp";
 import { AlbaButton } from "./AlbaButton";
 import { CardNotifyForm } from "./CardNotifyForm";
 import { Reveal } from "./Reveal";
@@ -75,7 +75,10 @@ export function PhysicalCardsSection() {
             </div>
             <p className="eyebrow mt-6 text-[0.6rem] text-foreground">{t("phys.notify")}</p>
             <div className="mt-4">
-              <CardNotifyForm />
+              <CardNotifyForm onSubmit={async (email) => {
+                const { addSignup } = await import("@/server/api");
+                await addSignup({ data: email });
+              }} />
             </div>
           </div>
         </Reveal>

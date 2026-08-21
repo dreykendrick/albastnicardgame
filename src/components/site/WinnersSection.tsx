@@ -1,10 +1,25 @@
 import { Reveal } from "./Reveal";
 import { WinnerCard } from "./WinnerCard";
-import { latestTournamentWinners } from "@/data/albastini";
+import { getWinners } from "@/server/api";
+import { useQuery } from "@tanstack/react-query";
 import { useI18n } from "@/lib/i18n";
 
 export function WinnersSection() {
   const { t } = useI18n();
+  const { data: winners } = useQuery({
+    queryKey: ["winners"],
+    queryFn: () => getWinners(),
+  });
+
+  const latestTournamentWinners = (() => {
+    if (!winners) return [];
+    const latestYear = Math.max(...winners.map((w) => w.year));
+    const latest = winners.filter((w) => w.year === latestYear);
+    const latestTournamentName = latest[0]?.tournament;
+    return latest
+      .filter((w) => w.tournament === latestTournamentName && w.position <= 3)
+      .sort((a, b) => a.position - b.position);
+  })();
 
   const [first, second, third] = latestTournamentWinners;
 

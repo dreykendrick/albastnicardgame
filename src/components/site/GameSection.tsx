@@ -1,4 +1,4 @@
-import safariBox from "@/assets/box-expansion.png";
+import safariBox from "@/assets/box-expansion.webp";
 import { AlbaButton } from "./AlbaButton";
 import { DownloadButton } from "./DownloadButton";
 import { PhoneMockup } from "./PhoneMockup";

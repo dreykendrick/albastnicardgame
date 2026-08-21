@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import logoAsset from "@/assets/albastini-logo.png";
+import logoAsset from "@/assets/albastini-logo.webp";
 
 /**
  * Albastini wordmark — official logo mark with the Albastini wordmark.

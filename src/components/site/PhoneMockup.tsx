@@ -1,4 +1,4 @@
-import appHome from "@/assets/app-home.jpg";
+import appHome from "@/assets/app-home.webp";
 import { cn } from "@/lib/utils";
 
 /** Lightweight CSS phone frame showing a real screenshot of the Albastini app. */
