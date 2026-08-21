@@ -94,19 +94,32 @@ const defaultDb: DbSchema = {
   signups: [],
 };
 
+let memoryDb: DbSchema | null = null;
+
 export async function readDb(): Promise<DbSchema> {
+  if (memoryDb) return memoryDb;
+
   try {
     const data = await fs.readFile(DB_PATH, "utf-8");
-    return JSON.parse(data);
+    memoryDb = JSON.parse(data);
+    return memoryDb!;
   } catch (error: any) {
-    if (error.code === "ENOENT") {
-      await writeDb(defaultDb);
-      return defaultDb;
+    memoryDb = defaultDb;
+    // Try to write it, but ignore if we are in a read-only environment (like Vercel)
+    try {
+      await fs.writeFile(DB_PATH, JSON.stringify(defaultDb, null, 2), "utf-8");
+    } catch (e) {
+      // Ignore EROFS
     }
-    throw error;
+    return memoryDb;
   }
 }
 
 export async function writeDb(data: DbSchema): Promise<void> {
-  await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2), "utf-8");
+  memoryDb = data;
+  try {
+    await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2), "utf-8");
+  } catch (e) {
+    // Ignore EROFS in serverless environments
+  }
 }
