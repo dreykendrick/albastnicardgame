@@ -13,11 +13,25 @@ import { WinnersSection } from "@/components/site/WinnersSection";
 import { LanguageProvider } from "@/lib/i18n";
 import { ThemeProvider } from "@/lib/theme";
 
+import { getTournament, getWinners } from "@/api/api";
+
 const title = "Albastini — The Tanzanian Card Game";
 const description =
   "Play. Compete. Win. Albastini is a fast tactical card game from Tanzania — on the app, on the table, and in live tournaments.";
 
 export const Route = createFileRoute("/")({
+  loader: async ({ context: { queryClient } }) => {
+    await Promise.all([
+      queryClient.ensureQueryData({
+        queryKey: ["tournament"],
+        queryFn: () => getTournament(),
+      }),
+      queryClient.ensureQueryData({
+        queryKey: ["winners"],
+        queryFn: () => getWinners(),
+      })
+    ]);
+  },
   head: () => ({
     meta: [
       { title },

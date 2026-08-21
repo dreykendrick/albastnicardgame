@@ -9,6 +9,7 @@ export function WinnersSection() {
   const { data: winners } = useQuery({
     queryKey: ["winners"],
     queryFn: () => getWinners(),
+    refetchInterval: 5000,
   });
 
   const latestTournamentWinners = (() => {

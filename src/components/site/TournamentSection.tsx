@@ -11,6 +11,7 @@ export function TournamentSection() {
   const { data: nextTournament } = useQuery({
     queryKey: ["tournament"],
     queryFn: () => getTournament(),
+    refetchInterval: 5000,
   });
 
   if (!nextTournament) return null;
