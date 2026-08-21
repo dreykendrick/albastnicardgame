@@ -1,6 +1,6 @@
 import { Reveal } from "./Reveal";
 import { WinnerCard } from "./WinnerCard";
-import { getWinners } from "@/server/api";
+import { getWinners } from "@/api/api";
 import { useQuery } from "@tanstack/react-query";
 import { useI18n } from "@/lib/i18n";
 

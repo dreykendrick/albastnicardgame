@@ -9,7 +9,7 @@ import {
   getSignups, 
   logoutAdmin,
   addWinner
-} from "@/server/api";
+} from "@/api/api";
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";

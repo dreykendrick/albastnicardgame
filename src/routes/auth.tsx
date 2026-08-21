@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { loginAdmin } from "@/server/api";
+import { loginAdmin } from "@/api/api";
 
 export const Route = createFileRoute("/auth")({
   component: AuthPage,

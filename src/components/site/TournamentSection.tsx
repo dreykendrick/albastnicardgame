@@ -2,7 +2,7 @@ import { CalendarDays, Trophy } from "lucide-react";
 import { AlbaButton } from "./AlbaButton";
 import { Reveal } from "./Reveal";
 import { TournamentCountdown } from "./TournamentCountdown";
-import { getTournament } from "@/server/api";
+import { getTournament } from "@/api/api";
 import { useQuery } from "@tanstack/react-query";
 import { useI18n } from "@/lib/i18n";
 

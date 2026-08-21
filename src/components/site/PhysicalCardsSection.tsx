@@ -76,7 +76,7 @@ export function PhysicalCardsSection() {
             <p className="eyebrow mt-6 text-[0.6rem] text-foreground">{t("phys.notify")}</p>
             <div className="mt-4">
               <CardNotifyForm onSubmit={async (email) => {
-                const { addSignup } = await import("@/server/api");
+                const { addSignup } = await import("@/api/api");
                 await addSignup({ data: email });
               }} />
             </div>
