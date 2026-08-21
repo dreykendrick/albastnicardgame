@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { setCookie, getCookie, deleteCookie } from "vinxi/http";
+import { setCookie, getCookie, deleteCookie } from "@tanstack/react-start/server";
 import { readDb, writeDb, type Tournament, type Winner, type Signup } from "./db";
 
 // AUTHENTICATION
